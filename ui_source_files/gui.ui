@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>860</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">#header{
+	background-color: rgb(236, 236, 236);
+}
+#sub_header{
+	background-color: rgb(236, 236, 236);
+	border: 2px solid rgb(0, 170, 0);
+	margin: 30px;
+	border-radius:10px;
+}
+#footer{
+	background-color: rgb(236, 236, 236);
+	border: 2px solid rgb(0, 170, 0);
+	margin: 30px;
+	border-radius:10px;
+}
+#body{
+	background-color: rgb(236, 236, 236);
+}
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="header" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="import_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Poppins</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px</string>
+         </property>
+         <property name="text">
+          <string>Import CSV</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="export_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>270</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Poppins</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:10px</string>
+         </property>
+         <property name="text">
+          <string>Export CSV</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="remaining">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>250</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Poppins</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 170, 0);
+border-radius:10px</string>
+         </property>
+         <property name="text">
+          <string>18/20 remaining</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="sub_header" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>220</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="topMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>30</number>
+       </property>
+       <property name="bottomMargin">
+        <number>30</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="create_section" native="true">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="2" column="0">
+           <widget class="QWidget" name="coupon_section" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QLabel" name="coupon_label">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:rgb(100, 100, 100)</string>
+               </property>
+               <property name="text">
+                <string>Coupon</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="coupon_input">
+               <property name="font">
+                <font>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+border-radius:10px;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="2">
+           <widget class="QWidget" name="coupon_section_2" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0">
+             <item>
+              <widget class="QLabel" name="coupon_label_2">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:rgb(100, 100, 100)</string>
+               </property>
+               <property name="text">
+                <string>Description</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="coupon_input_2">
+               <property name="font">
+                <font>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;
+border-radius:10px;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="create_coupon">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {background-color: rgb(0, 170, 0);
+border-radius: 10px;
+color: rgb(255, 255, 255);
+padding:10px}
+
+QPushButton:hover {
+	background-color: rgb(138, 226, 52);
+}</string>
+            </property>
+            <property name="text">
+             <string>Create Coupon</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" rowspan="3">
+           <widget class="QWidget" name="start_section" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="start_label">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:rgb(100, 100, 100)</string>
+               </property>
+               <property name="text">
+                <string>Start time</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateTimeEdit" name="start">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QDateTimeEdit {
+    border: 2px solid #999999;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #FFFFFF;
+    color: #333333;
+	font-size:15px;
+	font-weight:bold
+}
+
+QDateTimeEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center;
+    width: 20px;
+	border:none
+}
+
+QDateTimeEdit::down-arrow {
+    image: url(:/ressource/icons/chevron-down.svg);
+	width: 20px;
+	height: auto;
+}
+QDateTimeEdit::up-arrow {
+    image: url(:/ressource/icons/chevron-up.svg);
+}</string>
+               </property>
+               <property name="date">
+                <date>
+                 <year>2023</year>
+                 <month>9</month>
+                 <day>14</day>
+                </date>
+               </property>
+               <property name="minimumDateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2000</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+               <property name="currentSection">
+                <enum>QDateTimeEdit::DaySection</enum>
+               </property>
+               <property name="displayFormat">
+                <string>d/M/yyyy h:mm AP</string>
+               </property>
+               <property name="calendarPopup">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="2" rowspan="2">
+           <widget class="QWidget" name="end_section" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="end_label_2">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:rgb(100, 100, 100)</string>
+               </property>
+               <property name="text">
+                <string>End time</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateTimeEdit" name="end">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QDateTimeEdit {
+    border: 2px solid #999999;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #FFFFFF;
+    color: #333333;
+	font-size:15px;
+	font-weight:bold
+}
+
+QDateTimeEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center;
+    width: 20px;
+	border:none
+}
+
+QDateTimeEdit::down-arrow {
+    image: url(:/ressource/icons/chevron-down.svg);
+	width: 20px;
+	height: auto;
+}
+QDateTimeEdit::up-arrow {
+    image: url(:/ressource/icons/chevron-up.svg);
+}</string>
+               </property>
+               <property name="date">
+                <date>
+                 <year>2023</year>
+                 <month>9</month>
+                 <day>14</day>
+                </date>
+               </property>
+               <property name="minimumDateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2000</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+               <property name="currentSection">
+                <enum>QDateTimeEdit::DaySection</enum>
+               </property>
+               <property name="displayFormat">
+                <string>d/M/yyyy h:mm AP</string>
+               </property>
+               <property name="calendarPopup">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="body" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QTableWidget" name="tableWidget"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="ressource.qrc">
+              <normaloff>:/ressource/icons/trash-2.svg</normaloff>:/ressource/icons/trash-2.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="ressource.qrc">
+              <normaloff>:/ressource/icons/edit.svg</normaloff>:/ressource/icons/edit.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="footer" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>200</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="topMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>30</number>
+       </property>
+       <property name="bottomMargin">
+        <number>30</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="test_coupon_wrapper" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>200</height>
+          </size>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLineEdit" name="test_coupon_input">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="test_coupon_button">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {background-color: rgb(0, 170, 0);
+border-radius: 10px;
+color: rgb(255, 255, 255);
+padding:10px}
+
+QPushButton:hover {
+	background-color: rgb(138, 226, 52);
+}</string>
+            </property>
+            <property name="text">
+             <string>Test coupon</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="test_coupon_label">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="ressource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
