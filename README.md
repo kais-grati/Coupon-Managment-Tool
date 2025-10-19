@@ -6,7 +6,7 @@ A simple and intuitive tool for businesses to create, manage, and track promotio
 
 * **Create Coupons**: Generate unique promotional codes with custom discount values and expiration dates.
 * **Manage Coupons**: View, edit, or delete existing coupons easily.
-* **Track Usage**: Monitor how many times each coupon has been redeemed.
+* **Track Sates**: Monitor if coupons have expired.
 * **User-Friendly Interface**: Simple, clean interface for easy navigation.
 
 ## Preview
